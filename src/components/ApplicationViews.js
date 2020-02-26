@@ -2,7 +2,9 @@ import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
-import AnimalDetail from "./animal/AnimalDetail"
+import AnimalDetail from "./animal/AnimalDetail";
+import AnimalForm from './animal/AnimalForm';
+
 //only include these once they are built - previous practice exercise
 // import LocationCard from "./location/LocationCard";
 // import EmployeeCard from "./employee/EmployeeCard";
@@ -20,7 +22,7 @@ const ApplicationViews = () => {
             />
             {/* Make sure you add the `exact` attribute here */}
             <Route exact path="/animals" render={(props) => {
-                return <AnimalList />
+                return <AnimalList {...props} />
             }} />
             <Route
                 path="/animals/:animalId(\d+)"
@@ -34,6 +36,9 @@ const ApplicationViews = () => {
                     );
                 }}
             />
+            <Route path="/animals/new" render={(props) => {
+                return <AnimalForm {...props} />
+            }} />
         </React.Fragment>
     );
 };
