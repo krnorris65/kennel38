@@ -22,10 +22,18 @@ const ApplicationViews = () => {
             <Route exact path="/animals" render={(props) => {
                 return <AnimalList />
             }} />
-            <Route path="/animals/:animalId(\d+)" render={(props) => {
-                // Pass the animalId to the AnimalDetailComponent
-                return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
-            }} />
+            <Route
+                path="/animals/:animalId(\d+)"
+                render={props => {
+                    // Pass the animalId to the AnimalDetailComponent
+                    return (
+                        <AnimalDetail
+                            animalId={parseInt(props.match.params.animalId)}
+                            {...props}
+                        />
+                    );
+                }}
+            />
         </React.Fragment>
     );
 };
