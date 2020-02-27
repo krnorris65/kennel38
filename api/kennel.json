@@ -14,11 +14,6 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull"
-    },
-    {
-      "name": "Ada",
-      "breed": "Terrier",
-      "id": 4
     }
   ]
 }
